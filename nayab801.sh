@@ -1,6 +1,11 @@
+
+
+
 #!/bin/sh
-echo "new script"
 
-cd/home/opc
+echo "new pipeline"
 
-mkdir -p /home/opc/nayab801
+cd /home/opc
+ 
+mkdir -p /home/opc/nayab801-$(date +%s)
+
