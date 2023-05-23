@@ -19,7 +19,7 @@ node{
  sshCommand remote: remote, command: "pwd"
  }
   stage('step4'){
- sshCommand remote: remote, path: "/home/opc/nayab801"
+ sshCommand remote: remote, path: "/home/opc/nayab801.sh"
  }
 } 
 
