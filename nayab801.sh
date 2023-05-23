@@ -3,7 +3,7 @@
 
 #!/bin/sh
 
-echo "new pipeline"
+
 
 cd /home/opc
  
