@@ -7,5 +7,5 @@
 
 cd /home/opc
  
-mkdir -p /home/opc/nayab801.sh-$(date +%s)
+mkdir -p /home/opc/nayab801-$(date +%s).sh
 
