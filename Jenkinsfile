@@ -15,10 +15,10 @@ node{
   stage('step2'){
  sshCommand remote: remote, command: "sudo sh /home/opc/nayab801"
  }
-  stage('step2'){
+  stage('step3'){
  sshCommand remote: remote, command: "pwd"
  }
-  stage('step2'){
+  stage('step4'){
  sshCommand remote: remote, path: "/home/opc/nayab801.sh"
  }
 } 
