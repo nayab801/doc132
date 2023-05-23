@@ -12,6 +12,9 @@ node{
  stage('step1'){
   sshPut remote: remote, from: 'nayab801.sh', into: '/home/opc'
  }
+ stage('step2'){
+     sshScript remote: remote, script: "nayab801.sh"
+ }
  
   stage('step3'){
  sshCommand remote: remote, command: "pwd"
