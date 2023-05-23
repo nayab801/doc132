@@ -1,5 +1,5 @@
 
-node{
+node {
  def remote = [:]
   remote.name = 'oraclevm'
   remote.host = '152.67.160.182'
@@ -8,7 +8,8 @@ node{
   remote.allowAnyHosts = true
   stage('checkout') {
            checkout scm
-  }  
+  }
+ 
  stage('step1'){
   sshPut remote: remote, from: 'nayab801.sh', into: '/home/opc'
  }
