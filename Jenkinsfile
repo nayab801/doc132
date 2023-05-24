@@ -15,7 +15,7 @@ node{
      sshScript remote: remote, script: "nayab801.sh"
  }
   stage('step2'){
- sshCommand remote: remote, command: "ls"
+ sshCommand remote: remote, command: "pwd"
  }
   stage('step2'){
  sshRemove remote: remote, path: "/home/opc/nayab801.sh"
