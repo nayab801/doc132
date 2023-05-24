@@ -9,13 +9,13 @@ node{
            checkout scm
   }  
  stage('step1'){
-  sshPut remote: remote, from: 'nayab801.sh', into: 'home/opc'
+  sshPut remote: remote, from: 'nayab801.sh', into: '/home/opc'
  }
   stage('step2'){
      sshScript remote: remote, script: "nayab801.sh"
  }
   stage('step2'){
- sshCommand remote: remote, command: "pwd"
+ sshCommand remote: remote, command: "ls"
  }
   stage('step2'){
  sshRemove remote: remote, path: "/home/opc/nayab801.sh"
