@@ -8,20 +8,20 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t ubuntu_jenkins .'
+              bat 'docker build -t nginx_jenkins .'
             }
         }
          stage('Tag Image') {
            
             steps {
-               bat 'docker tag ubuntu_jenkins:latest nayab801/ubuntu_jenkins:latest'
+               bat 'docker tag nginx_jenkins:latest nayab801/nginx_jenkins:latest'
             }
         }
          stage('Push Image') {
           
             steps {
                bat 'docker login -u nayab801 -p Rasool@801'
-                bat 'docker push nayab801/ubuntu_jenkins:latest'
+                bat 'docker push nayab801/nginx_jenkins:latest'
             }
         }
     }
