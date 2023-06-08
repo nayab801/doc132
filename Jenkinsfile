@@ -12,24 +12,21 @@ pipeline {
             }
         }
          stage('Tag Image') {
-           
             steps {
                bat 'docker tag nginx_jenkins:latest nayab801/nginx_jenkins:latest'
             }
-        }
-        stage ('Run Image') {
-        steps {
-            bat 'docker run --name nginx1 -p 7778:80 nginx_jenkins:latest'
-          } 
-      }
-        
-         stage('Push Image') {
-          
+         }
+        stage('Push Image') {
             steps {
                bat 'docker login -u nayab801 -p Rasool@801'
                 bat 'docker push nayab801/nginx_jenkins:latest'
             }
         }
+        stage ('Run Image') {
+            steps {
+            bat 'docker run --name nginx1 -p 7778:80 nginx_jenkins:latest'
+          } 
+      }
     }
     post { 
         aborted { 
