@@ -24,7 +24,7 @@ pipeline {
         }
         stage ('Run Image') {
             steps {
-            bat 'docker run --name nginx1 -p 7778:80 nginx_jenkins:latest'
+            bat 'docker run --name nginx23 -p 7788:80 nginx_jenkins:latest'
           } 
       }
     }
