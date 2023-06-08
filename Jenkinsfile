@@ -20,6 +20,8 @@ pipeline {
         stage ('Run Image')
         steps {
             bat 'docker run --name nginx -p 7777:80 nginx_jenkins'
+          } 
+      }
         
          stage('Push Image') {
           
