@@ -14,7 +14,7 @@ pipeline {
          stage('Tag Image') {
            
             steps {
-               bat 'docker tag ubuntu_jenkins:latest nayab801/ubuntu:latest'
+               bat 'docker tag ubuntu_jenkins:latest nayab801/ubuntu_jenkins:latest'
             }
         }
          stage('Push Image') {
