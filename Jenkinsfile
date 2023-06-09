@@ -10,7 +10,7 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t node001 .'
+              bat 'docker build -t node001 -f Dockerfile01  .'
             }
         }
          stage('Tag Image') {
