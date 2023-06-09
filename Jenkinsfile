@@ -3,14 +3,14 @@
 pipeline {
     agent any
     stages {
-        stage('check out') {NODE_VERSION=8.11-slim
+        stage('check out') {NODE_VERSION=8.11-slim Docker001
             steps {
               checkout scm
             }
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t NODE_VERSION=8.11-slim .'
+              bat 'docker build -t NODE_VERSION=8.11-slim Dockerfile001.'
             }
         }
          stage('Tag Image') {
