@@ -3,7 +3,7 @@
 pipeline {
     agent any
     stages {
-        stage('check out') {NODE_VERSION=8.11-slim Docker001
+        stage('check out') {NODE_VERSION=8.11-slim Docker01
             steps {
               checkout scm
             }
