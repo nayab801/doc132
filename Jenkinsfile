@@ -1,2 +1,32 @@
+
 # from base image node
-FROM node:8.11-slim
+ARG NODE_VERSION=8.11-slim
+FROM node:$NODE_VERSION
+
+LABEL "about"="This file is just am example to demonstarte the LABEL"
+
+ENV workdirectory /home/nayab
+
+RUN mkdir /dockerexample
+VOLUME /dockerexample
+
+COPY package.json .
+
+RUN ls -ll &&\
+    npm install
+
+RUN useradd nayab &&\
+    mkdir -p $workdirectory &&\
+    chown nayab $workdirectory
+    
+USER nayab
+WORKDIR $workdirectory
+
+ADD index.js .
+
+RUN ls -l
+
+EXPOSE 3070
+
+# command executable and version
+ENTRYPOINT ["node"]
