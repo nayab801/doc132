@@ -3,30 +3,30 @@
 pipeline {
     agent any
     stages {
-        stage('check out') {NODE_VERSION=8.11-slim Dockerfile01
+        stage('check out') {
             steps {
               checkout scm
             }
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t NODE_VERSION=8.11-slim Dockerfile001.'
+              bat 'docker build -t node001 .'
             }
         }
          stage('Tag Image') {
             steps {
-               bat 'docker tag nginx_jenkins:latest nayab801/NODE_VERSION=8.11-slim'
+               bat 'docker tag node001 nayab801/node001'
             }
          }
         stage('Push Image') {
             steps {
                bat 'docker login -u nayab801 -p Rasool@801'
-                bat 'docker push nayab801/NODE_VERSION=8.11-slim'
+                bat 'docker push nayab801/node001'
             }
         }
         stage ('Run Image') {
             steps {
-            bat 'docker run --name nginx23 -p 7798:80 NODE_VERSION=8.11-slim'
+            bat 'docker run --name C1 -p 7798:3070 -d  node001'
           } 
       }
     }
