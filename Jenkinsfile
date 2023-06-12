@@ -10,23 +10,23 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t node001 -f Dockerfile  .'
+              bat 'docker build -t alpine1 -f Dockerfile1  .'
             }
         }
          stage('Tag Image') {
             steps {
-               bat 'docker tag node001 nayab801/node001'
+               bat 'docker tag alpine1 nayab801/alpine1'
             }
          }
         stage('Push Image') {
             steps {
                bat 'docker login -u nayab801 -p Rasool@801'
-                bat 'docker push nayab801/node001'
+                bat 'docker push nayab801/alpine1'
             }
         }
         stage ('Run Image') {
             steps {
-            bat 'docker run --name C4 -p 7775:3070 -d  node001'
+            bat 'docker run --name d11 -p 7701:80 -d  alpine1'
           } 
       }
     }
