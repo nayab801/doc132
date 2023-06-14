@@ -19,7 +19,7 @@ services:
        - "MID"
    MID:
     build: ./
-    image: nayab801/nginx
+    image: nayab801/
     ports:
         - "7766:80"
     container_name: MID
