@@ -10,7 +10,7 @@ pipeline {
         }
          stage('up ') {
             steps {
-              bat 'docker-compose up -d'
+              bat 'docker-compose down'
             }
         }
          
