@@ -8,7 +8,7 @@ pipeline {
               checkout scm
             }
         }
-         stage('up Image') {
+         stage('up ') {
             steps {
               bat 'docker-compose up -d'
             }
