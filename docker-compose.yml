@@ -23,7 +23,7 @@ services:
          - "DB"
     MID:
       build: ./
-      image: syed0071/compose_nginx_build:latest
+      image: nayab801/compose_nginx_build:latest
       ports:
         - "7766:80"
       container_name: MID
@@ -31,8 +31,8 @@ services:
         - "new_compose_vol:/opt/MID"
 volumes:
      vol_nginx_1:
-           name: vol_nginx_1
+           name: vol0005
            external: true
      new_compose_vol:
-            name: new_compose_vol
+            name: vol0005
             external: false
