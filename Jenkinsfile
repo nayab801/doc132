@@ -1,5 +1,4 @@
 
-
 pipeline {
     agent any
     stages {
@@ -8,12 +7,16 @@ pipeline {
               checkout scm
             }
         }
-         stage('up ') {
+         stage('down up') {
             steps {
               bat 'docker-compose down'
             }
         }
-         
+        stages ('start up') {
+            steps {
+                bat 'docker-compose up -d'
+            }
+        }
     }
     post { 
         aborted { 
