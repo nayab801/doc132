@@ -7,16 +7,23 @@ pipeline {
               checkout scm
             }
         }
-         stage('down up') {
+         stage('docker-compose stop') {
             steps {
-              bat 'docker-compose down'
+              sh 'docker-compose down'
             }
         }
         stages ('start up') {
             steps {
-                bat 'docker-compose up -d'
+                sh 'docker-compose up -d'
             }
         }
+
+        stages ('push images') {
+            sh 'sudo docker login nayab801/ -p Rasool@801'
+            sh 'sudo docker push nayab801/compose_nginx_build:latest'
+            #// 'sudo docker push nayab801/compose_nginx_build:latest'
+         }
+      }
     }
     post { 
         aborted { 
