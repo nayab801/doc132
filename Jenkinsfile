@@ -8,11 +8,13 @@ pipeline {
             }
         }
          stage('docker-compose stop') {
+             
             steps {
               sh 'docker-compose down'
             }
         }
         stages ('start up') {
+            
             steps {
                 sh 'docker-compose up -d'
             }
